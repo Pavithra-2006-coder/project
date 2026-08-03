@@ -1,14 +1,21 @@
-name:Basic CI orkflow
+name: Basic CI Workflow
+
 on:
-push:
-branches:["main"]
-pull_request:
-branvhes:["main"]
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
 jobs:
-build:
-runs_on :ubuntu_latest
-steps:
--name:checkout repository
-uses:action/checkout@v3
--name:Display a message
-run:eco"Helollo,Github Action!"
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Display a message
+        run: echo "Hello, GitHub Actions!"
